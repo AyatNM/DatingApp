@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,7 @@ namespace API.Data
             {
                 e.ToTable("Users");
                 e.HasKey(x => x.Id);
-                e.Property(x=>x.Id).ValueGeneratedOnAdd();
+                e.Property(x => x.Id).ValueGeneratedOnAdd();
                 e.HasIndex(x => x.UserName).IsUnique(true);
             });
             base.OnModelCreating(modelBuilder);

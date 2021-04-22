@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class UserPasswordAdded : Migration
+    public partial class initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +12,7 @@ namespace API.Data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserName = table.Column<string>(type: "TEXT", nullable: true),
-                    PasswordHash = table.Column<byte[]>(type: "BLOB", nullable: true),
-                    PasswordSalt = table.Column<byte[]>(type: "BLOB", nullable: true)
+                    UserName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
